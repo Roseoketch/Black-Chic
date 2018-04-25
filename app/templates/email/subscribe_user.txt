@@ -1,1 +1,4 @@
-Welcome to black chic
+Hello {{subscriber.name}}
+Welcome to Black Chic
+We have just seen you have signed up for our application and want to welcome you,
+Enjoy the posts on the blog.

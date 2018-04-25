@@ -2,7 +2,7 @@ from flask import render_template,request,redirect,url_for,abort,flash
 from . import main
 from flask_login import login_required,current_user
 from ..models import User,Blog,Comment,Subscribe
-from .forms import UpdateProfile,BlogForm,CommentForm,SubscribeForm,LoginForm
+from .forms import UpdateProfile,BlogForm,CommentForm,SubscribeForm
 from .. import db,photos
 from ..email import mail_message
 
@@ -12,51 +12,52 @@ def index():
     """
     View root page function that returns the index page and its data
     """
-    form = LoginForm()
+    # form = LoginForm()
     blogs = Blog.query.all()
     comment = Comment.query.all()
     title = 'Black chic'
 
-    return render_template('index.html',comment=comment,title=title, form=LoginForm )
-#
-# @main.route('/user/<uname>')
-# def profile(uname):
-#     user=User.query.filter_by(username=uname).first()
-#
-#     if user is None:
-#         abort(404)
-#
-#     title = "Black chic"
-#
-#     return render_template("profile/profile.html",title=title,user=user)
+    return render_template('index.html',comment=comment,title=title, )
 
-# @main.route('/user/<uname>/update',methods = ['GET','POST'])
-# @login_required
-# def update_profile(uname):
-#     user = User.query.filter_by(userna      {{ wtf.quick_form(login_form) }}me=uname).first()
-#     if user is None:
-#         abort(404)
-#
-#     form = UpdateProfile()
-#     if form.validate_on_submit():
-#         user.bio = form.bio.data
-#
-#         db.session.add(user)
-#         db.session.commit()
-#
-#         return redirect(url_for('.profile',uname=user.username))
-#     return render_template('profile/update.html',form=form)
-#
-# @main.route('/user/<uname>/update/pic',methods= ['POST'])
-# @login_required
-# def update_pic(uname):
-#     user = User.query.filter_by(username = uname).first()
-#     if 'photos' in request.files:
-#         filename = images.save(request.files['image'])
-#         path = f'images/{filename}'
-#         user.profile_pic_path = path
-#         db.session.commit()
-#     return redirect(url_for('main.profile',uname=uname))
+@main.route('/user/<uname>')
+def profile(uname):
+    user=User.query.filter_by(username=uname).first()
+
+    if user is None:
+        abort(404)
+
+    title = "Black chic"
+
+    return render_template("profile/profile.html",title=title,user=user)
+
+@main.route('/user/<uname>/update',methods = ['GET','POST'])
+@login_required
+def update_profile(uname):
+    user = User.query.filter_by(username=uname).first()
+    {{ wtf.quick_form(login_form) }}
+    if user is None:
+        abort(404)
+
+    form = UpdateProfile()
+    if form.validate_on_submit():
+        user.bio = form.bio.data
+
+        db.session.add(user)
+        db.session.commit()
+
+        return redirect(url_for('.profile',uname=user.username))
+    return render_template('profile/update.html',form=form)
+
+@main.route('/user/<uname>/update/pic',methods= ['POST'])
+@login_required
+def update_pic(uname):
+    user = User.query.filter_by(username = uname).first()
+    if 'photos' in request.files:
+        filename = images.save(request.files['image'])
+        path = f'images/{filename}'
+        user.profile_pic_path = path
+        db.session.commit()
+    return redirect(url_for('main.profile',uname=uname))
 
 @main.route('/blog/new',methods=['GET','POST'])
 @login_required
@@ -66,8 +67,8 @@ def new_blog():
     if form.validate_on_submit():
         title=form.title.data
         body=form.body.data
-        new_blog=Blog(title=title,body=body,user=current_user)
-        new_blog.save_blog()
+        new_blog=Blog(title=title,body=body,users=current_user)
+        # new_blog.save_blog()
         for sub in subscriber:
             mail_message("New Blog Alert","email/update",sub.email,sub=sub)
         return redirect(url_for('main.index'))

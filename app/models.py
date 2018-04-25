@@ -3,9 +3,11 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin #This helps us not to have to implement the method ourselves
 from datetime import datetime
 from . import login_manager
-@login_manager.user_loader #modifies the load_user function by passing in a user_id to the function that queries the database and gets a User with that ID
+
+@login_manager.user_loader
 def load_user(user_id):
-    return User.query.get(int(user_id))
+    return User.query.get(int(user_id)) #modifies the load_user function by passing in a user_id to the function that queries the database and gets a User with that ID
+
 class User(UserMixin, db.Model):
     """
     Defining the user object
@@ -19,10 +21,10 @@ class User(UserMixin, db.Model):
     id = db.Column(db.Integer,primary_key = True)
     username = db.Column(db.String(255), index = True)
     email= db.Column(db.String(255), unique=True, index=True)
-    pass_secure = db.Column(db.String(255))
+    # pass_secure = db.Column(db.String(255))
     password_hash = db.Column(db.String(255))
-    bio = db.Column(db.String(255)) #users biography
-    blog = db.relationship("Blog", backref="user", lazy="dynamic")
+    # bio = db.Column(db.String(255)) #users biography
+    blogs = db.relationship("Blog", backref="user", lazy="dynamic")
     comment = db.relationship("Comment", backref="user", lazy="dynamic")
 # storing hashes of passwords instead of passwords keeps users information secure
     @property
@@ -33,7 +35,7 @@ class User(UserMixin, db.Model):
         """
         Takes the user password, hashes it and stores it in  password_hash
         """
-        self.password_hash = generate_password_hash
+        self.password_hash = generate_password_hash(password)
 
     def verify_password(self, password):
         """
@@ -55,7 +57,7 @@ class Blog(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(255))
     body = db.Column(db.String(255))
-    author = db.Column(db.String(255))
+    # author = db.Column(db.String(255))
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
     posted = db.Column(db.DateTime, default=datetime.utcnow)
     comment = db.relationship("Comment", backref="blogs", lazy="dynamic")
@@ -88,11 +90,11 @@ class Blog(db.Model):
     def __init__(self,
                 title,
                 body,
-                author,
+                # author,
                 users):
         self.title = title
         self.body = body
-        self.author = author
+        # self.author = author
         self.users = users
 
 class Comment(db.Model):
