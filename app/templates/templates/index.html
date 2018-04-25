@@ -1,0 +1,16 @@
+{% extends 'base.html' %} {% import 'macros.html' as macro %} {% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <img src="../static/images/bluenice.jpg" class="cover" style="width:100%" />
+    </div>
+    <div class="col-md-4">
+      {{ wtf.quick_form(login_form) }}
+    </div>
+  </div>
+
+  <div class="button btn btn-info">
+    <a href="/subscribe">Subscribe</a>
+  </div>
+
+  {% endblock %}

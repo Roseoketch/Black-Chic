@@ -1,9 +1,16 @@
-{% extends 'base.html' %} {% import 'macros.html' as macro %} {% block content %}
+{% extends 'base.html' %} {% import 'macros.html' as macro %} {% import 'bootstrap/wtf.html' as wtf%}{% block content %}
+
 <div class="container">
   <div class="row">
-    <img src="../static/images/bluenice.jpg" class="cover" style="width:100%" />
+    <div class="col-md-8">
+      <img src="../static/images/bluenice.jpg" class="cover" style="width:100%" />
+    </div>
+
   </div>
-  <div class="button btn btn-info">
-    <a href="/subscribe">Subscribe</a>
-  </div>
-  {% endblock %}
+</div>
+
+<div class="button btn btn-info">
+  <a href="/subscribe">Subscribe</a>
+</div>
+
+{% endblock %}

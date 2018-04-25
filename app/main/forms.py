@@ -20,3 +20,10 @@ class SubscribeForm(FlaskForm):
     name = StringField("Your Name")
     email = StringField("Email")
     submit= SubmitField('Subscribe')
+
+class LoginForm(FlaskForm):
+    name = StringField("Your Name")
+    email = StringField("Email")
+    password = StringField("Password")
+    submit= SubmitField('Subscribe')
+    
