@@ -26,4 +26,3 @@ class LoginForm(FlaskForm):
     email = StringField("Email")
     password = StringField("Password")
     submit= SubmitField('Subscribe')
-    
