@@ -1,0 +1,46 @@
+{% extends 'base.html'%} {% import "bootstrap/wtf.html" as wtf %}
+
+{% block styles%} {{ super() }}
+<link href="{{url_for('static',filename='css/about.css')}}" rel="stylesheet" type="text/css">{% endblock %}{% block content %}
+<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
+<div class="container">
+<div class="row">
+  <div class="col-md-6">
+    <h3>The Black Chic</h3>
+  <p style=" font-family:Indie Flower; font-size:30px;">Welcome to the Black chic site, we offer a space for black girls who can communicate and express their journey in keeping and maintaining there natural hair.</p>
+</div>
+<div clsss="col-md-6">
+  <h3>Our Aim</h3>
+  <p style=" font-family:Indie Flower; font-size:30px;">We are aimed at ensuring that after three years many peolple shall have adapted to the trend of being natural</p>
+</div>
+</div>
+
+<div class="row">
+  <h2 style="text-align:center;">Meet Our Team</h2>
+
+  <div class="col-md-4">
+    <img src="static/images/yvon.jpg" alt="Yvonne" height="50%" style="border-radius:50%;">
+    <h4 style="font-size:25px; text-align:center;">Yvonne Wanjiru </h4><br>
+    <p style=" font-family:Indie Flower; font-size:30px;">She is the project master, She worked tirelessly to ensure we achieve the best as a team.</p>
+  </div>
+
+  <div class="col-md-4">
+    <img src="static/images/rose.jpg" alt="Rose" height="50%" style="border-radius:50%;">
+    <h4>Rose Oketch</h4 style="font-size:25px;"><br>
+    <p style=" font-family:Indie Flower; font-size:30px;">She ensured everyone was okay, gave moral support when everything wasn't working well.</p>
+  </div>
+
+  <div class="col-md-4">
+    <img src="static/images/liz.jpg" alt="Leez" height="50%" style="border-radius:50%;">
+    <h4>Leez Ichang'a</h4 style="font-size:25px;"><br>
+    <p style=" font-family:Indie Flower; font-size:30px;">The back end master and ensured all errors are debbuged. She ensured everyone is present.</p>
+  </div>
+
+</div>
+
+</div>
+
+
+
+{% endblock %}

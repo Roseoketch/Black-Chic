@@ -1,0 +1,32 @@
+.navbar-default { margin : 0 !important; }
+
+body {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.social{
+  background-color: #363630;
+  padding: 0px;
+}
+
+.fa {
+  padding: 5px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  color:#BBBBBB;
+  background-repeat: no-repeat;
+
+}
+
+.fa:hover {
+  opacity: 0.7;
+  text-decoration: none;
+}
+
+.FA:hover{
+  opacity: 0.7;
+}

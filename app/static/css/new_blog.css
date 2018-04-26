@@ -1,0 +1,81 @@
+.grid-container {
+ display: grid;
+ grid-template-columns: auto ;
+ grid-gap: 15px;
+ background-image: url("../images/nice.jpg");
+ background-repeat: no-repeat;
+ background-size: cover;
+ background-position: 0 0px;
+ background-color:#363630;
+ padding-top: 20px;
+ padding-bottom: 50px;
+ padding-left: 100px;
+ padding-right: 100px;
+}
+
+.container{
+  background-color: black;
+  background-image: url("../static/images/natoqueen.png");
+  color: #a88f8f;
+}
+
+.item9{
+ background-color: #ffffff;
+ text-align: center;
+ padding: 400px 0;
+ font-size: 30px;
+ opacity: 0.9;
+}
+
+.row{
+  position: absolute;
+  top: 2px;
+  bottom: 200px;
+  right: 115px;
+  left: 115px;
+  /*height: 500px;*/
+}
+.wel{
+  color: #a88f8f;
+  font-size: 110px;
+  background-color: #363630;
+  font-family: 'Indie Flower';
+  align-items: center;
+}
+.stand{
+  height: 500px;
+}
+.well{
+  color: #a88f8f;
+  font-size: 27px;
+  background-color: #363630;
+  font-family: 'Indie Flower';
+  align-items: right;
+  border: none;
+}
+
+.below{
+  height: 500px;
+  width: 400px;
+  bottom: 0px;
+  right: 0px
+}
+
+.quote{
+  font-family: 'Indie Flower';
+  align-items: center;
+  color: #323232;
+  font-size: 50px;
+}
+
+
+body {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.this{
+  font-family: 'Great Vibes', cursive;
+  font-size: 100px;
+  color: #a88f8f;
+}

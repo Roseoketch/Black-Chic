@@ -1,16 +1,36 @@
-{% extends 'base.html' %} {% import 'macros.html' as macro %} {% import 'bootstrap/wtf.html' as wtf%}{% block content %}
+<!DOCTYPE html>
+{% extends 'base.html' %} {% import 'macros.html' as macro %} {% import 'bootstrap/wtf.html' as wtf%}
+{% block styles%}
+  {{ super() }}
+  <link href="{{url_for('static',filename='css/nn.css')}}" rel="stylesheet" type="text/css">
+{% endblock %}
+{% block content %}
+<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-8">
-      <img src="../static/images/bluenice.jpg" class="cover" style="width:100%" />
+<body>
+  <center>
+  <h1 class="wel">WELCOME!!</h1>
+<img src="/static/images/ppuff.png" alt="ppuff" width="600px" height="600px" style="position:relative top:-10px" ;>
+</center>
+
+<div class="row">
+  <div class="footer">
+    <div class="social">
+      <br>
+      <br>
+      <center>
+        <a href="https://www.facebook.com/infomedkenya.infomed.3" target="_blank" class="fa fa-facebook" style="display:inline"></a>
+        <a href="#" target="_blank" class="fa fa-twitter" style="display:inline"></a>
+        <a href="https://www.instagram.com/info_medkenya/" target="_blank" class="fa fa-instagram" style="display:inline"></a>
+        <a href="#" target="_blank" class="fa fa-google" style="display:inline"></a>
+        <a href="#" target="_blank" class="fa fa-phone" style="display:inline"></a>
+      </center>
+      <br>
+      <br>
     </div>
-
   </div>
 </div>
 
-<div class="button btn btn-info">
-  <a href="/subscribe">Subscribe</a>
-</div>
-
+</body>
 {% endblock %}

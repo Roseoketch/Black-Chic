@@ -7,8 +7,8 @@ class UpdateProfile(FlaskForm):
     submit = SubmitField('Submit')
 
 class BlogForm(FlaskForm):
-    title = StringField("Caption",validators=[Required()])
-    body = TextAreaField("Whats on your mind?", validators=[Required()])
+    title = StringField("Title",validators=[Required()])
+    body = TextAreaField("Blog", validators=[Required()])
     submit = SubmitField('Submit')
 
 class CommentForm(FlaskForm):

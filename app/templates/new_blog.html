@@ -1,14 +1,57 @@
-{% extends 'base.html'%} {% import "bootstrap/wtf.html" as wtf %} {% block content %}
-<div class="container">
+{% extends 'base.html'%} {% import "bootstrap/wtf.html" as wtf %}
 
-  <div class="col-md-2"></div>
+{% block styles%} {{ super() }}
+<link href="{{url_for('static',filename='css/new_blog.css')}}" rel="stylesheet" type="text/css">{% endblock %}{% block content %}
+<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
+<body>
+  <div class="grid-container">
+   <div class="item9">
+       <div class="row">
+          <h1 class="wel">Black Girls… </h1>
+          <div class="col-md-6">
+            <img src=/static/images/hair9.png alt="alb" class="stand">
+          </div>
+         <div class="col-md-6">
+           <p class="well">Always remember: It’s so easy, and it takes very little effort, to be like the next person. Don’t insult yourself like that. Be yourself! Walk YOUR walk. Talk YOUR talk. Be uniquely YOU in everything that you do. A confident woman who has a strong sense of self is quite beautiful. Allow your light to shine from the inside out. Self-love is the greatest love of all. Love, respect, and be good to yourself, first! You matter! You count! And you’re important, too!<br>..Stephanie Lembart</p>
+         </div>
+       </div>
+<br>
+<br>
+<br>
+<br>
+       <div>
+         <img src=/static/images/afrolarge.png alt="" class="below">
+       </div>
 
-  <div class="col-md-8">
+       <h2 class="quote"> ...YOUR SPACE...</h2>
+       <br>
+       <div class="container">
 
-    {{ wtf.quick_form(blog_form) }}
+         <div class="col-md-2"></div>
+
+         <div class="col-md-8">
+
+           {{ wtf.quick_form(blog_form) }}
+         </div>
+         <div class="col-md-2"></div>
+
+       </div>
+
+       <div class="">
+         <img src=/static/images/whitemust.jpg alt="">
+       </div>
+
+       <br>
+       <br>
+       <br>
+
+         <p class="this">#freethymane</p>
+   </div>
+
   </div>
-  <div class="col-md-2"></div>
 
-</div>
+
+
 
 {% endblock %}
