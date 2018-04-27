@@ -1,0 +1,47 @@
+.container{
+  color: #363630;
+}
+
+h3{
+  font-family: 'Great Vibes';
+  font-size:50px;
+}
+
+h4{
+  font-family: 'Great Vibes';
+  font-size:50px;
+}
+
+h2{
+  font-family: 'Great Vibes';
+  font-size:50px;
+}
+
+#upper_left {
+	position: fixed;
+	top: 50px;
+	left: 0;
+  height: 150px;
+  width: 150px;
+}
+#upper_right {
+	position: fixed;
+	top: 0;
+	right: 0%;
+  height: 170px;
+  width: 170px;
+}
+#lower_left {
+	position:fixed;
+	bottom: 0%;
+	left: 0;
+  height: 150px;
+  width: 150px;
+}
+#lower_right {
+	bottom: 0%;
+	right: 0%;
+	position:fixed;
+  height: 170px;
+  width: 170px;
+}

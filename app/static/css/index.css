@@ -3,6 +3,7 @@
 body {
   overflow-y: scroll;
   overflow-x: hidden;
+  background-color: #fbf3d4;
 }
 
 .social{
